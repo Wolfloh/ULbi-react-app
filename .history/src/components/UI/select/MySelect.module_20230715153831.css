@@ -1,0 +1,19 @@
+.MySelect{
+    padding: 10px 10px 10px 0;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    font-size: 14px;
+    
+    
+}
+
+.MySelect option{
+padding: 0;
+text-align: center;
+}
+
+
+.MySelect option:disabled{
+color: rgb(16, 189, 68);
+
+}

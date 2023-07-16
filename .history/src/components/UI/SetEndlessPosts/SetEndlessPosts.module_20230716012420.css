@@ -1,0 +1,21 @@
+.radio__wrapper{
+    margin: 0 0 10px 0;
+}
+
+.radio__body{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio{
+    width: 30px;
+    height: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 1px inset #000;
+}
+
+.text{
+    font-size: 16px;
+}
