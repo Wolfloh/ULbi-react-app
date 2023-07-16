@@ -183,11 +183,28 @@ color:inherit;
 .pages__wrapper{
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   margin: 40px auto 100px auto;
-  justify-content: center;
+  justify-content: space-between;
   max-width: 550px;
+  justify-items: center;
 }
+
+@media(max-width: 600px){
+.pages__wrapper{
+  display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+  
+}
+@media(max-width: 300px){
+
+  .pages__wrapper{
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  }
+}
+
 
 .page{
   padding: 10px 15px;
