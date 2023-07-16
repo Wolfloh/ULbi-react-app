@@ -10,7 +10,7 @@ export const PostForm = ({ posts, setPosts, setModal }) => {
         body: '',
     });
     function addNewPost(e) {
-        e.preventDefault();
+        e.preventDefault
         setPosts([...posts, { ...post, id: Date.now() }])
         setPost({
             title: '',
