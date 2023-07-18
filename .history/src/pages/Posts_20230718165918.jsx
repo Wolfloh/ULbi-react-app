@@ -43,6 +43,12 @@ export function Posts() {
 
 
 
+    const obj = {};
+    const math = Math.random()
+    obj[math] = 'math method';
+    console.log(obj);
+
+
 
     useObserver(
         lastElement.current,

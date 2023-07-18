@@ -13,8 +13,8 @@ function Post(props) {
             </div>
             <div className="post__btns-wrapper">
                 <Link className="post__btns" to={`/${props.post.id}`}>открыть</Link>
-                <div onClick={() => props.remove(props.post)} className="post__btns delete__btn">
-                    удалить
+                <div className="post__btns delete__btn">
+                    <button onClick={() => props.remove(props.post)}>удалить</button>
                 </div>
             </div>
         </div>
