@@ -19,7 +19,7 @@
     align-items: center;
     position: fixed;
     padding: 0px 10px;
-height: 89px;
+max-height: 89px;
     z-index: 100;
     top: 0;
     left: 0;
