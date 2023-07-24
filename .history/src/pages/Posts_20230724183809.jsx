@@ -11,10 +11,10 @@ import { getPageCount } from "../utils/pages";
 import { Pagination } from "../components/UI/pagination/Pagination";
 import '../styles/App.css'
 import { useObserver } from "../hooks/useObserver";
+import { MySelect } from "../components/UI/select/MySelect";
 import { PostItems } from "../components/PostItems";
 import { NumberOfPosts } from '../components/NumberOfPosts'
 import { SetEndlessPosts } from '../components/UI/SetEndlessPosts/SetEndlessPosts'
-
 
 
 export function Posts() {
@@ -42,6 +42,8 @@ export function Posts() {
     }
 
 
+
+
     useObserver(
         lastElement.current,
         () => setPage(page + 1),
@@ -55,6 +57,7 @@ export function Posts() {
     useEffect(() => {
         fetchPosts();
     }, [page, limit])
+
 
 
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)

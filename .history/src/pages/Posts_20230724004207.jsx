@@ -11,10 +11,10 @@ import { getPageCount } from "../utils/pages";
 import { Pagination } from "../components/UI/pagination/Pagination";
 import '../styles/App.css'
 import { useObserver } from "../hooks/useObserver";
+import { MySelect } from "../components/UI/select/MySelect";
 import { PostItems } from "../components/PostItems";
 import { NumberOfPosts } from '../components/NumberOfPosts'
 import { SetEndlessPosts } from '../components/UI/SetEndlessPosts/SetEndlessPosts'
-
 
 
 export function Posts() {
@@ -42,6 +42,8 @@ export function Posts() {
     }
 
 
+
+
     useObserver(
         lastElement.current,
         () => setPage(page + 1),
@@ -57,6 +59,11 @@ export function Posts() {
     }, [page, limit])
 
 
+    const getModal = () => {
+        console.log('getModal');
+    }
+
+
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
 
     return (
@@ -64,7 +71,7 @@ export function Posts() {
             <MyButton onClick={() => setModal(true)}>
                 Создать Пользователя
             </MyButton>
-            <MyModal visible={modal} setVisible={setModal}>
+            <MyModal getModal={getModal} visible={modal} setVisible={setModal}>
                 <PostForm posts={posts} setPosts={setPosts} setModal={setModal} />
             </MyModal>
             <hr style={{

@@ -10,7 +10,6 @@ export const useSortedPosts = (posts, sort) => {
         }
     }, [posts, sort]);
 
-
     return sortedPosts;
 
 }

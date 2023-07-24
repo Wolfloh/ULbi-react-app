@@ -9,6 +9,9 @@ export const MyModal = ({ children, visible, setVisible }) => {
         rootClasses.push(cl.active)
     }
 
+    if (true) {
+        console.log('rerender modal');
+    }
 
     return (
         <div onClick={() => {

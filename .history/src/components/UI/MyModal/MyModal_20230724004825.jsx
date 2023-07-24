@@ -4,11 +4,17 @@ import cl from './MyModal.module.css'
 
 export const MyModal = ({ children, visible, setVisible }) => {
 
+
+    if (true) {
+        console.log('render');
+    }
+
+
+
     const rootClasses = [cl.myModal];
     if (visible) {
         rootClasses.push(cl.active)
     }
-
 
     return (
         <div onClick={() => {

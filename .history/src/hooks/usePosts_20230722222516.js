@@ -9,7 +9,7 @@ export const useSortedPosts = (posts, sort) => {
             return posts;
         }
     }, [posts, sort]);
-
+    console.log('useSortedPosts');
 
     return sortedPosts;
 
