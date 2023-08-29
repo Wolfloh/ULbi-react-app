@@ -1,0 +1,52 @@
+.radio {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    &__button {
+        min-width: 40px;
+        height: 20px;
+        background-color: #fff;
+        border: 1px solid #000;
+        border-radius: 10px;
+        position: relative;
+        transition: all 0.3s ease 0s;
+        &::after {
+            transition: all 0.3s ease 0s;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            transform: translate(0, -50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #000;
+            z-index: 2;
+        }
+        &.active {
+            background-color: rgb(79, 255, 131);
+            border: 1px solid rgb(79, 255, 131);
+            &::after {
+                left: 24px;
+                background-color: #fff;
+            }
+        }
+    }
+    &__body {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+        @media (min-width: 1000px) {
+            &:hover {
+                .radio__text {
+                    color: rgb(80, 80, 80);
+                }
+            }
+        }
+    }
+    &__text {
+        font-size: 16px;
+    }
+}

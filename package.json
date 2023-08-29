@@ -7,9 +7,14 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "bootstrap": "^5.3.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "mobx": "^6.10.0",
+    "mobx-react-lite": "^4.0.3",
+    "node": "^20.5.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "react-scripts": "^5.0.1",
@@ -43,5 +48,10 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+  },
+  "description": "------------------------------\r ### before starting, you need to run the command - `npm i`",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

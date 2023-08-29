@@ -2,20 +2,30 @@ import React from "react";
 import Post from "./Post";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Loader } from "./UI/Loader/Loader";
+import { ComponentError } from "./UI/ComponentError/ComponentError";
 
-export const PostItems = ({ posts, title, remove, isPostsLoading }) => {
+export const PostItems = ({ posts, title, remove, isPostsLoading, error }) => {
+
+    if (error) {
+        return (
+            <>
+                <h1 className="posts-title">
+                    {title}
+                </h1>
+                <ComponentError />
+            </>
+        )
+
+    }
 
     return (
         <div>
-            <h1 style={{
-                textAlign: 'center',
-                margin: '25px',
-            }}>
+            <h1 className="posts-title">
                 {title}
             </h1>
             {
                 <TransitionGroup>
-                    {posts.map((i, index) =>
+                    {posts.map((i) =>
                         <CSSTransition
                             key={i.id}
                             timeout={400}

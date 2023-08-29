@@ -1,5 +1,5 @@
 import React from 'react'
-import st from './Comment.module.css'
+import st from './Comment.module.scss'
 
 
 export const Comment = ({ comment, index }) => {

@@ -9,7 +9,7 @@ import PostService from "../API/PostService";
 import { useFetching } from "../hooks/useFetching";
 import { getPageCount } from "../utils/pages";
 import { Pagination } from "../components/UI/pagination/Pagination";
-import '../styles/App.css'
+import '../styles/App.scss'
 import { useObserver } from "../hooks/useObserver";
 import { PostItems } from "../components/PostItems";
 import { NumberOfPosts } from '../components/NumberOfPosts'
@@ -17,7 +17,13 @@ import { SetEndlessPosts } from '../components/UI/SetEndlessPosts/SetEndlessPost
 
 
 
-export function Posts() {
+
+
+
+
+
+
+export const Posts = () => {
     const [posts, setPosts] = useState([]);
     const [filter, setFilter] = useState({ sort: '', query: '' })
     const [modal, setModal] = useState(false);
@@ -41,7 +47,6 @@ export function Posts() {
         setPosts(posts.filter(p => p.id !== post.id))
     }
 
-
     useObserver(
         lastElement.current,
         () => setPage(page + 1),
@@ -50,7 +55,6 @@ export function Posts() {
         posts.length,
         observe
     );
-
 
     useEffect(() => {
         fetchPosts();
@@ -62,29 +66,26 @@ export function Posts() {
     return (
         <div className="App">
             <MyButton onClick={() => setModal(true)}>
-                Создать Пользователя
+                Создать Пост
             </MyButton>
             <MyModal visible={modal} setVisible={setModal}>
                 <PostForm posts={posts} setPosts={setPosts} setModal={setModal} />
             </MyModal>
-            <hr style={{
-                height: '1px',
-                backgroundColor: 'black',
-                margin: '25px 0',
-            }} />
             <PostFilter
                 filter={filter}
                 setFilter={setFilter}
             />
             <SetEndlessPosts setObserve={setObserve} />
             <NumberOfPosts limit={limit} setLimit={setLimit} observe={observe} setPage={setPage} />
-            {postError &&
-                <h1>Произошла Ошибка ${postError}</h1>
-            }
-            <PostItems isPostsLoading={isPostsLoading} remove={removePost} posts={sortedAndSearchedPosts} title={'Список постов'} />
+            <PostItems
+                isPostsLoading={isPostsLoading}
+                remove={removePost}
+                posts={sortedAndSearchedPosts}
+                title={'Список постов'}
+                error={postError}
+            />
             <div ref={lastElement} />
             <Pagination totalPages={totalPages} page={page} setPage={setPage} observe={observe} />
-
         </div>
     );
 }

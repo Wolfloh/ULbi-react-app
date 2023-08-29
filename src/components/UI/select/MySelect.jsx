@@ -1,5 +1,5 @@
 import React from 'react'
-import st from './MySelect.module.css'
+import st from './MySelect.module.scss'
 
 export const MySelect = ({ options, defaultValue, value, onChange }) => {
     return (
@@ -11,7 +11,7 @@ export const MySelect = ({ options, defaultValue, value, onChange }) => {
         >
             <option disabled value="">{defaultValue}</option>
             {options.map(option => {
-                return <option key={option.value} value={option.value}>{option.name}</option>
+                return <option className={st.option} key={option.value} value={option.value}>{option.name}</option>
             })}
         </select>
     )

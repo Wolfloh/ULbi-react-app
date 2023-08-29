@@ -1,0 +1,116 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 40px 0px;
+    margin: auto;
+    gap: 20px;
+    @media (min-width: 450px) {
+        padding: 40px;
+        gap: 35px;
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 20px;
+        max-width: 600px;
+        text-align: center;
+        @media (min-width: 350px) {
+            font-size: 25px;
+        }
+    }
+    &__img_wrapper {
+        margin: auto;
+        overflow: hidden;
+        img {
+            max-width: 240px;
+            max-height: 250px;
+            @media (min-width: 350px) {
+                max-width: 300px;
+                max-height: 300px;
+            }
+        }
+    }
+    &__title_rate {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @media (min-width: 520px) {
+            flex-direction: row;
+        }
+    }
+    &__rate_green {
+        color: green;
+    }
+    &__rate_red {
+        color: red;
+    }
+    &__rate_yellow {
+        color: rgb(138, 138, 49);
+    }
+    &__rate {
+        font-size: 18px;
+        font-weight: 600;
+        @media (min-width: 350px) {
+            font-size: 22px;
+        }
+    }
+    &__rate_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    &__reviews {
+        font-size: 16px;
+        @media (min-width: 350px) {
+            font-size: 17px;
+        }
+    }
+    &__description {
+        font-size: 16px;
+        max-width: 800px;
+        text-align: center;
+        @media (min-width: 350px) {
+            font-size: 18px;
+        }
+        @media (min-width: 900px) {
+            text-align: left;
+        }
+    }
+    &__price_basket {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-direction: column;
+        @media (min-width: 350px) {
+            flex-direction: row;
+            gap: 25px;
+        }
+    }
+    &__price {
+        font-size: 22px;
+    }
+    &__basket {
+        background-color: rgb(51, 204, 97);
+        width: 150px;
+        height: 60px;
+
+        border-radius: 12px;
+        font-size: 20px;
+        color: #fff;
+        @media (min-width: 1000px) {
+            &:hover {
+                background-color: rgb(63, 245, 118);
+            }
+        }
+        img {
+            max-width: 30px;
+            max-height: 30px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

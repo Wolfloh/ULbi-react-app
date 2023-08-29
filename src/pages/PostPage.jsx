@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import PostService from '../API/PostService'
+import { BackAside } from '../components/UI/BackAside/BackAside'
 import { Comment } from '../components/UI/Comment/Comment'
+import { ComponentError } from '../components/UI/ComponentError/ComponentError'
 import { Loader } from '../components/UI/Loader/Loader'
 import { useFetching } from '../hooks/useFetching'
-import '../styles/App.css'
+import '../styles/App.scss'
 
 
 
@@ -35,74 +37,55 @@ export const PostPage = () => {
 
   return (
     <>
+      <BackAside />
       {error
         &&
-        <h3
-          style={{
-            fontSize: '30px',
-          }}>
-          Произошла ошибка
-        </h3>
+        <ComponentError />
       }
       {!error
         &&
         (isLoading
           ?
-          <div style={{
-            margin: '220px 0 0 0'
-          }}>
-            <Loader className='post__loader' />
-          </div>
+          <Loader />
           :
-          <div className='post__wrapper'>
-            <strong className='post__title'>{post.id} {post.title}</strong>
-            <p className='post__body'>{post.body}</p>
-          </div>)
+          <div className='post-wrapper'>
+            <div className='post-shell'>
+              <strong className='post-title'>{post.id} {post.title}</strong>
+              <p className='post-body'>{post.body}</p>
+            </div>
+          </div>
+        )
       }
 
       {!commentsError
         &&
         (areCommentsLoading
           ?
-          <div style={{
-            margin: '300px 0 0 0'
-          }}>
-            <Loader className='post__loader' />
-          </div>
+          <Loader />
           :
           (comments.length
             ?
             <>
-              <h2 style={{
-                textAlign: 'center',
-                fontSize: '21px'
-              }}>Коментарии
+              <h2 className='post-comments'>
+                Коментарии
               </h2>
               {comments.map((comment, index) =>
                 <Comment key={comment.id} comment={comment} index={index} />)}
             </>
             :
-            <h3
-              style={{
-                fontSize: '30px',
-              }}>
-              Нет комментариев
-            </h3>
+            (!error
+              &&
+              <h3 className='post-comments'>
+                Нет комментариев
+              </h3>
+            )
           )
         )
       }
       {commentsError
         &&
-        <h3
-          style={{
-            fontSize: '30px',
-          }}>
-          Произошла ошибка
-        </h3>
+        <ComponentError />
       }
-
-
-
     </>
   )
 }

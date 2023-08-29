@@ -1,47 +1,22 @@
-import React, { useState, useEffect } from "react";
-import './styles/App.css'
-import { AuthContext } from "./context/index.js";
+import React, { useEffect } from "react";
+import './styles/App.scss'
 import { AppRouters } from './components/AppRouters'
+import { userStore } from "./stores/UserStore";
+import { observer } from "mobx-react-lite";
 
-
-
-
-function App() {
-  const [isAuth, setIsAuth] = useState(false);
-  const [isLoading, setLoading] = useState(true);
-
+const App = observer(() => {
+  const { setIsAuth, setLoading } = userStore;
   useEffect(() => {
-    if (localStorage.getItem('auth')) {
-      setIsAuth(true)
+    if (!localStorage.getItem('auth')) {
+      setIsAuth(false)
     }
     setLoading(false)
   }, [])
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
-    <AuthContext.Provider value={{
-      isAuth,
-      setIsAuth,
-      isLoading
-    }}>
-      <AppRouters />
-    </AuthContext.Provider>
+    <AppRouters />
   )
-}
+})
 
 export default App;

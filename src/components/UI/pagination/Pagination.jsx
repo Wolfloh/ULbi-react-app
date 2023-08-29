@@ -3,6 +3,7 @@ import { usePagination } from '../../../hooks/usePagination';
 
 export const Pagination = ({ totalPages, page, setPage, observe }) => {
     const pagesArr = usePagination(totalPages);
+
     return (
         <>
             {observe

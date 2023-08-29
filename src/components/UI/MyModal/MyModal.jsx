@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import cl from './MyModal.module.css'
+import cl from './MyModal.module.scss'
 
 
 export const MyModal = ({ children, visible, setVisible }) => {

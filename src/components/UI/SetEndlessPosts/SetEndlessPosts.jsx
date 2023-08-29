@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import cl from './SetEndlessPosts.module.css'
+import cl from './SetEndlessPosts.module.scss'
 
 
 export const SetEndlessPosts = ({ setObserve }) => {
-  const [firstRadio, setFirstRadio] = useState(`${cl.radio} ${cl.active}`);
-  const [secondRadio, setSecondRadio] = useState(`${cl.radio}`);
+  const [firstRadio, setFirstRadio] = useState(`${cl.radio__button} ${cl.active}`);
+  const [secondRadio, setSecondRadio] = useState(`${cl.radio__button}`);
 
   return (
-    <div className={cl.radio__wrapper}>
+    <div className={cl.radio}>
       <div
         onClick={() => {
-          setFirstRadio(`${cl.radio} ${cl.active}`)
-          setSecondRadio(`${cl.radio}`)
+          setFirstRadio(`${cl.radio__button} ${cl.active}`)
+          setSecondRadio(`${cl.radio__button}`)
           setObserve(true)
         }}
         className={cl.radio__body}>
@@ -19,21 +19,21 @@ export const SetEndlessPosts = ({ setObserve }) => {
           className={firstRadio}>
 
         </div>
-        <div className={cl.text}>
+        <div className={cl.radio__text}>
           Включить Бесконечную Ленту
         </div>
       </div>
       <div
         onClick={() => {
-          setSecondRadio(`${cl.radio} ${cl.active}`)
-          setFirstRadio(`${cl.radio}`)
+          setSecondRadio(`${cl.radio__button} ${cl.active}`)
+          setFirstRadio(`${cl.radio__button}`)
           setObserve(false)
         }}
         className={cl.radio__body}>
         <div className={secondRadio}>
 
         </div>
-        <div className={cl.text}>
+        <div className={cl.radio__text}>
           Включить Пагинацию
         </div>
       </div>

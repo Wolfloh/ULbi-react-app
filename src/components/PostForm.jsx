@@ -19,9 +19,9 @@ export const PostForm = ({ posts, setPosts, setModal }) => {
         setModal(false)
     }
     return (
-        <form>
-            <MyInput value={post.title} onInput={e => setPost({ ...post, title: e.target.value })} placeholder="Название поста" />
-            <MyInput value={post.body} onInput={e => setPost({ ...post, body: e.target.value })} placeholder="Описание поста" />
+        <form className='modal-forms'>
+            <MyInput name='create-post-title' value={post.title} onInput={e => setPost({ ...post, title: e.target.value })} placeholder="Название поста" />
+            <MyInput name='create-post-body' value={post.body} onInput={e => setPost({ ...post, body: e.target.value })} placeholder="Описание поста" />
             <MyButton onClick={addNewPost}>Создать пост</MyButton>
         </form>
     )
