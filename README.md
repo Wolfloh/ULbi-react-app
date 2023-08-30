@@ -1,13 +1,4 @@
 
-------------------------------
-### before starting, you need to run the command - `npm i` 
-
-------------------------------
-
-
-
-
-
 >>>>>>> readme
 # Getting Started with Create React App
 
