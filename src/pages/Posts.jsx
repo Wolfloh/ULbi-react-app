@@ -61,9 +61,6 @@ export const Posts = () => {
     }, [page, limit])
 
 
-
-
-
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
 
     return (
