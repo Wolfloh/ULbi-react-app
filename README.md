@@ -1,4 +1,7 @@
 
+# to start npm i
+
+
 >>>>>>> readme
 ### Getting Started with Create React App
 ## Available Scripts
