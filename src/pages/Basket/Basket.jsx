@@ -29,7 +29,7 @@ const Basket = observer(() => {
             <div className={cl.empty_wrapper}>
                 <BackAside />
                 <h2 className={cl.empty_cart}>В корзине пока что ничего нет</h2>
-                <Link to={'/shop'}>
+                <Link to={'/my-react-app/shop'}>
                     <MyButton>Добавить</MyButton>
                 </Link>
             </div>
@@ -61,7 +61,7 @@ const Basket = observer(() => {
                                             <img src={checkMark} alt="checkMark" />
                                         </label>
                                     </section>
-                                    <Link to={`/shop/${product.id}`} className={cl.items__product}>
+                                    <Link to={`/my-react-app/shop/${product.id}`} className={cl.items__product}>
                                         <div className={cl.items__image_wrapper}>
                                             <img className={cl.items__image} src={product.image} alt="product__image" />
                                         </div>

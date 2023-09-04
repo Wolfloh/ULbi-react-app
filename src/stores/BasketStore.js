@@ -9,7 +9,7 @@ class BasketStore {
         this.basketList.unshift(product)
     }
     removeFromTheBasket = (id) => {
-        const newBasket = this.basketList.filter(p => p.id != id);
+        const newBasket = this.basketList.filter(p => p.id !== id);
         this.basketList = newBasket;
     }
 }

@@ -12,7 +12,7 @@ function Post(props) {
                 </div>
             </div>
             <div className="post__btns-wrapper">
-                <Link className="post__btns" to={`/${props.post.id}`}>открыть</Link>
+                <Link className="post__btns" to={`/my-react-app/${props.post.id}`}>открыть</Link>
                 <div onClick={() => props.remove(props.post)} className="post__btns delete__btn">
                     удалить
                 </div>

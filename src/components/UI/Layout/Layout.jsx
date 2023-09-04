@@ -31,10 +31,10 @@ export const Layout = observer(() => {
                         <span className={st.navbar__burger_line}></span>
                         <span className={st.navbar__burger_line}></span>
                     </button>
-                    <NavLink className='navbar-link' to='about'>О НАС</NavLink>
-                    <NavLink className='navbar-link' to="/">ПОСТЫ</NavLink>
-                    <NavLink className='navbar-link' to="shop">МАГАЗИН</NavLink>
-                    <NavLink className='navbar-link navbar-link-basket' to="basket">
+                    <NavLink className='navbar-link' to='/my-react-app/about'>О НАС</NavLink>
+                    <NavLink className='navbar-link' to="/my-react-app/">ПОСТЫ</NavLink>
+                    <NavLink className='navbar-link' to="/my-react-app/shop">МАГАЗИН</NavLink>
+                    <NavLink className='navbar-link navbar-link-basket' to="/my-react-app/basket">
                         {basketList.length
                             ?
                             <span className='basket-number'>{basketList.length}</span>

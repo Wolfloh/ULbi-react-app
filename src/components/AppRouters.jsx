@@ -1,7 +1,6 @@
 import React from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { About } from '../pages/About'
-import { Error } from '../pages/Error'
 import { Login } from '../pages/Login'
 import { PostPage } from '../pages/PostPage'
 import { Posts } from '../pages/Posts'
@@ -24,33 +23,35 @@ export const AppRouters = observer(() => {
         <Routes>
             {isAuth
                 ?
-
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Posts />} />
-                    <Route path='/:id' element={<PostPage />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="login" element={<Login />} />
-                    <Route path="shop" element={<Shop />} />
-                    <Route path="basket" element={<Basket />} />
-                    <Route path="shop/:product" element={<ProductPage />} />
-                    <Route path="*" element={<Error />} />
-                </Route>
-
-                :
-
-                <Route path="/" element={<Layout />}>
-                    <Route path="login" element={<Login />} />
-                    <Route path="shop" element={<Shop />} />
-                    <Route path="basket" element={<Basket />} />
-                    <Route path="shop/:product" element={<ProductPage />} />
+                <>
+                    <Route path="/my-react-app/" element={<Layout />}>
+                        <Route index element={<Posts />} />
+                        <Route path=':id' element={<PostPage />} />
+                        <Route path="about" element={<About />} />
+                        <Route path="login" element={<Login />} />
+                        <Route path="shop" element={<Shop />} />
+                        <Route path="basket" element={<Basket />} />
+                        <Route path="shop/:product" element={<ProductPage />} />
+                    </Route>
                     <Route path="*" element={
-                        <Navigate to='login' state={{ from: location.pathname }} />
+                        <Navigate to='/my-react-app/' state={{ from: location.pathname }} />
                     } />
-                    <Route index element={
-                        <Navigate to='login' state={{ from: location.pathname }} />
+                </>
+                :
+                <>
+                    <Route path="/my-react-app/" element={<Layout />}>
+                        <Route path="login" element={<Login />} />
+                        <Route path="shop" element={<Shop />} />
+                        <Route path="basket" element={<Basket />} />
+                        <Route path="shop/:product" element={<ProductPage />} />
+                        <Route index element={
+                            <Navigate to='login' state={{ from: location.pathname }} />
+                        } />
+                    </Route>
+                    <Route path="*" element={
+                        <Navigate to='/my-react-app/login' state={{ from: location.pathname }} />
                     } />
-                </Route>
-
+                </>
             }
         </Routes>
     )
