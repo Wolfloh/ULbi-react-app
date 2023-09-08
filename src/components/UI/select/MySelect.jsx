@@ -5,7 +5,6 @@ export const MySelect = ({ options, defaultValue, value, onChange }) => {
     return (
         <select
             className={st.MySelect}
-
             value={value}
             onChange={e => onChange(e.target.value)}
         >

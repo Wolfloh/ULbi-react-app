@@ -25,6 +25,7 @@ export const Products = observer(() => {
         return <ComponentError />
     }
 
+
     return (
         <div className={cl.products}>
             {products.map(product =>
