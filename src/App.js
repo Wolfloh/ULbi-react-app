@@ -4,7 +4,6 @@ import { AppRouters } from './components/AppRouters'
 import { userStore } from "./stores/UserStore";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
-//"homepage": "https://wolfloh.github.io/my-react-app/",
 const App = observer(() => {
   const { setIsAuth, setLoading } = userStore;
   const navigate = useNavigate()

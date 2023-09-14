@@ -10,8 +10,7 @@ export const Layout = observer(() => {
     const { isAuth, setIsAuth } = userStore;
     const { basketList } = basket;
     const [burgerClass, setBurgerClass] = useState(`${st.navbar}`);
-
-
+    let start;
     return (
         <div
             onClick={(e) => {
@@ -19,6 +18,18 @@ export const Layout = observer(() => {
                     &&
                     !e.target.closest(`.${st.navbar__burger_body}`)) {
                     setBurgerClass(`${st.navbar}`)
+                }
+            }}
+            onTouchStart={(e) => {
+                start = e.changedTouches[0].clientX
+            }}
+            onTouchEnd={(e) => {
+                let offset = 100;
+                if (e.changedTouches[0].clientX >= start + offset) {
+                    setBurgerClass(`${st.navbar} ${st.active}`)
+                } else if (e.changedTouches[0].clientX <= start - offset) {
+                    setBurgerClass(`${st.navbar}`)
+
                 }
             }}
             className={st.wrapper}>
@@ -59,9 +70,6 @@ export const Layout = observer(() => {
                     :
                     <NavLink className='navbar-link' to="login">ВХОД</NavLink>
                 }
-                {/* <div onClick={(e) => {
-                    setBurgerClass(`${st.navbar}`)
-                }} className={st.close_block}></div> */}
             </header>
             <main className={st.main}>
                 <Outlet />
