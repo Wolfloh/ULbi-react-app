@@ -24,6 +24,7 @@
     border: inherit;
     animation: inherit;
     animation-duration: 2s;
+    z-index: 1000;
 }
 .spinner:after {
     animation-duration: 4s;

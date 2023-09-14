@@ -1,6 +1,5 @@
 import React from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
-import { About } from '../pages/About'
 import { Login } from '../pages/Login'
 import { PostPage } from '../pages/PostPage'
 import { Posts } from '../pages/Posts'
@@ -27,7 +26,6 @@ export const AppRouters = observer(() => {
                     <Route path="/my-react-app/" element={<Layout />}>
                         <Route index element={<Posts />} />
                         <Route path=':id' element={<PostPage />} />
-                        <Route path="about" element={<About />} />
                         <Route path="login" element={<Login />} />
                         <Route path="shop" element={<Shop />} />
                         <Route path="basket" element={<Basket />} />

@@ -1,6 +1,6 @@
 import st from './Layout.module.scss'
 import { Outlet, NavLink } from "react-router-dom";
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import basketImg from './basket.png';
 import { userStore } from '../../../stores/UserStore';
 import { observer } from "mobx-react-lite";
@@ -13,13 +13,15 @@ export const Layout = observer(() => {
 
 
     return (
-        <div onClick={(e) => {
-            if (!e.target.closest(`.${st.navbar__aside}`)
-                &&
-                !e.target.closest(`.${st.navbar__burger_body}`)) {
-                setBurgerClass(`${st.navbar}`)
-            }
-        }} className={st.wrapper}>
+        <div
+            onClick={(e) => {
+                if (!e.target.closest(`.${st.navbar__aside}`)
+                    &&
+                    !e.target.closest(`.${st.navbar__burger_body}`)) {
+                    setBurgerClass(`${st.navbar}`)
+                }
+            }}
+            className={st.wrapper}>
             <header className={burgerClass}>
                 <button onClick={() => setBurgerClass(`${st.navbar} ${st.active}`)} className={st.navbar__burger_body}>
                     <span className={st.navbar__burger_line}></span>
@@ -31,7 +33,6 @@ export const Layout = observer(() => {
                         <span className={st.navbar__burger_line}></span>
                         <span className={st.navbar__burger_line}></span>
                     </button>
-                    <NavLink className='navbar-link' to='/my-react-app/about'>О НАС</NavLink>
                     <NavLink className='navbar-link' to="/my-react-app/">ПОСТЫ</NavLink>
                     <NavLink className='navbar-link' to="/my-react-app/shop">МАГАЗИН</NavLink>
                     <NavLink className='navbar-link navbar-link-basket' to="/my-react-app/basket">

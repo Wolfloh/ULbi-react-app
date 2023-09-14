@@ -33,9 +33,7 @@ const ProductPage = observer(() => {
             return cl.product__rate_red
         }
     }
-    useEffect(() => {
-        getProduct()
-    }, [])
+    useEffect(() => { getProduct() }, [])
 
     if (isLoading) {
         return <Loader />
