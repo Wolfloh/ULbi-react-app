@@ -100,9 +100,11 @@ export const Products = observer(() => {
                         }}
                         onTouchEnd={() => {
                             makeATransition(product)
+
                         }}
                         key={product.id}
-                        className={cl.products__item}>
+                        className={cl.products__item}
+                    >
                         <div className={cl.products__img_wrapper}>
                             <img className={cl.products__img} src={product.image} alt={product.title} />
                         </div>

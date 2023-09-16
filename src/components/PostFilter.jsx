@@ -14,7 +14,6 @@ export const PostFilter = ({ filter, setFilter }) => {
                 placeholder='Поиск'
             />
             <MySelect
-                value={filter.sort}
                 onChange={choice => setFilter({ ...filter, sort: choice })}
                 defaultValue='Сортировка по'
                 options={[
